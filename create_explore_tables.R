@@ -1,4 +1,5 @@
-
+# Sample create table commands
+# NOTE: these tables have already been created
 
 library(RODBC)
 conn <- odbcConnect(dsn="hive_dsn",uid="ntid",pwd="xxxxx")
