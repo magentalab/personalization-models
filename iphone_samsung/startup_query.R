@@ -26,7 +26,7 @@ max(case when t1.user_agent like '%Mac%'
 -- Last Touch: 4 = Direct, 2 = Natural, 9 = Paid
 max(case when t1.va_closer_id = '4' then 1 else 0 end) as channel_direct,
 max(case when t1.va_closer_id = '2' then 1 else 0 end) as channel_ns,
-max(case when t1.va_closer_id = '9' then 3 else 0 end) as channel_paid,
+max(case when t1.va_closer_id = '9' then 1 else 0 end) as channel_paid,
 
 -- Check for any cart add (event id=12)
 max(case 
