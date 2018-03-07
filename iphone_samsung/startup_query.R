@@ -54,7 +54,7 @@ or t1.post_event_list like '12,%' ) then 1 else 0 end) as galaxy_cart
 
 
 from sitecat.hit_data as t1
-where src_file_date = '2018-02-21'
+where src_file_date > '2018-01-31' and src_file_date < '2018-02-22'
 group by mcvisid,geo_zip)
 
 -- Filters dataset to only cart adds
