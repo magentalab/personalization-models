@@ -1,0 +1,1 @@
+return String(user.get('aam.segments'));
