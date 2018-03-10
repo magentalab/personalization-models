@@ -50,16 +50,34 @@ when lower(t1.post_evar5) like '%galaxy%'
 and (t1.post_event_list like '%,12,%' 
 or t1.post_event_list = '12' 
 or t1.post_event_list like '%,12' 
-or t1.post_event_list like '12,%' ) then 1 else 0 end) as galaxy_cart
+or t1.post_event_list like '12,%' ) then 1 else 0 end) as galaxy_cart,
+
+MAX(
+CASE
+WHEN
+t1.post_evar16 <> '' 
+OR UPPER(t1.post_channel) LIKE UPPER('%account%') 
+OR UPPER(t1.post_prop3) LIKE UPPER('%my.t-mobile.com%') 
+OR UPPER(t1.post_pagename) LIKE UPPER('%web2go%') 
+OR t1.post_event_list LIKE '%,203,%' 
+OR t1.post_event_list = '203' 
+OR t1.post_event_list LIKE '%,203' 
+OR t1.post_event_list LIKE '203,%' 
+THEN
+1 
+ELSE
+0 
+END
+) AS Customer_Flag
 
 
 from sitecat.hit_data as t1
-where src_file_date > '2018-01-31' and src_file_date < '2018-02-22'
+where src_file_date > '2018-02-28' and src_file_date < '2018-03-08'
 group by mcvisid,geo_zip)
 
 -- Filters dataset to only cart adds
 as a
-where cart_add <> '0'"
+where cart_add <> '0' and Customer_Flag = '0'"
 
 
 start_time <- Sys.time()
