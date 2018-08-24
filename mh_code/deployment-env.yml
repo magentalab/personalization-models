@@ -1,0 +1,10 @@
+# Optional: Uncomment the line below & put your custom role here which has the IAM permissions required by your code
+iamRoleARN: arn:aws:iam::302890901340:role/cloud_jazz_mhd_services
+
+# Optional: Uncomment the line below & put specific security groups (comma seperated) that your function needs to execute.
+#securityGroupIds: sg-abc0123
+
+# Optional: Uncomment the line below & put specific subnet ids (comma seperated) that your function needs to execute.
+#subnetIds: subnet-abc0123, subnet-xyz0789
+
+service_id: 206b578a-6237-55b7-f9a7-0756efa38c0e

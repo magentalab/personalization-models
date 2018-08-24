@@ -1,0 +1,22 @@
+{
+    "reports_2": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "report_id": {"N":"1005821881"},
+                    "datetime": {"S":"12:38:28 AM"},
+                    "title": {"S":"hostJourney_Military_ClicksToCall"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "report_id": {"N":"1005821881"},
+                    "datetime": {"S":"12:48:07 AM"},
+                    "title": {"S":"report7"}
+                }
+            }
+        }
+    ]
+}
