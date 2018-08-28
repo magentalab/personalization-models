@@ -30,6 +30,5 @@ def lambda_handler(event,context):
 		response = table.scan(
 			FilterExpression = Key('title').eq(i),
 			)
-		ids.append(response['Items'][0])	
-	for entry in ids:
-		print(entry['report_id'])
+		ids.append(response['Items'][0]['report_id'])	
+	return(ids)
